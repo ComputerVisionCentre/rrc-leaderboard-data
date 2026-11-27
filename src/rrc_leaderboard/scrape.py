@@ -7,16 +7,23 @@ private methods are never visible here.
 from __future__ import annotations
 
 import re
+import ssl
 import tempfile
 import time
+import warnings
 from dataclasses import dataclass, field
 from importlib import resources
+from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, urljoin, urlparse
 
 import certifi
 import requests
 from bs4 import BeautifulSoup
+from cryptography import x509
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import serialization
+from cryptography.x509.oid import AuthorityInformationAccessOID
 
 BASE_URL = "https://rrc.cvc.uab.es/"
 USER_AGENT = "rrc-leaderboard-mirror (+https://github.com/ComputerVisionCentre/rrc-leaderboard-data)"
@@ -62,25 +69,95 @@ class Leaderboard:
 # --------------------------------------------------------------------------- fetching
 
 _CA_BUNDLE: str | None = None
+_FETCHED_INTERMEDIATES: list[str] = []
 
 
 def ca_bundle() -> str:
-    """certifi roots + the GEANT intermediate that rrc.cvc.uab.es does not send.
+    """Trusted roots (certifi) + intermediate certificates that rrc.cvc.uab.es does not send.
 
-    The server only sends its leaf certificate, so non-browser clients cannot build
-    the chain. Adding the (public) intermediate keeps full verification on. Once the
-    server sends the full chain this is harmless and can be removed.
+    The server only sends its leaf certificate, so non-browser clients cannot build the
+    chain. We ship the current intermediate (certs/), and `fetch_intermediates()` adds
+    newer ones at run time if RRC's certificate is reissued under a different one.
+    Verification always stays on.
     """
     global _CA_BUNDLE
     if _CA_BUNDLE is None:
-        intermediate = resources.files("rrc_leaderboard").joinpath("certs/geant-tls-rsa-1.pem").read_text()
-        with open(certifi.where()) as f:
-            roots = f.read()
+        parts = [
+            Path(certifi.where()).read_text(),
+            resources.files("rrc_leaderboard").joinpath("certs/geant-tls-rsa-1.pem").read_text(),
+            *_FETCHED_INTERMEDIATES,
+        ]
         tmp = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
-        tmp.write(roots + "\n" + intermediate)
+        tmp.write("\n".join(parts))
         tmp.close()
         _CA_BUNDLE = tmp.name
     return _CA_BUNDLE
+
+
+def _issuer_urls(cert: x509.Certificate) -> list[str]:
+    """'CA Issuers' URLs from a certificate's Authority Information Access extension."""
+    try:
+        aia = cert.extensions.get_extension_for_class(x509.AuthorityInformationAccess).value
+    except x509.ExtensionNotFound:
+        return []
+    return [d.access_location.value for d in aia if d.access_method == AuthorityInformationAccessOID.CA_ISSUERS]
+
+
+def _trusted_roots() -> list[x509.Certificate]:
+    """certifi roots, parsed one by one so a single malformed old root can't break loading."""
+    roots = []
+    end = "-----END CERTIFICATE-----"
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        for block in Path(certifi.where()).read_text().split(end)[:-1]:
+            try:
+                roots.append(x509.load_pem_x509_certificate((block[block.index("-----BEGIN"):] + end).encode()))
+            except ValueError:
+                continue
+    return roots
+
+
+def _signed_by_trusted_root(cert: x509.Certificate) -> bool:
+    for root in _trusted_roots():
+        if root.subject == cert.issuer:
+            try:
+                cert.verify_directly_issued_by(root)
+                return True
+            except (ValueError, TypeError, InvalidSignature):
+                continue
+    return False
+
+
+def fetch_intermediates(host: str, port: int = 443) -> int:
+    """Download the intermediate(s) named in the server certificate (AIA "CA Issuers").
+
+    AIA downloads are plain HTTP, so a downloaded certificate is only accepted if it is
+    directly signed by a root in certifi: tampering can make the request fail, but can
+    never make an untrusted certificate trusted. Returns the number of certificates added.
+    """
+    global _CA_BUNDLE
+    leaf = x509.load_pem_x509_certificate(ssl.get_server_certificate((host, port)).encode())
+    added = 0
+    for url in _issuer_urls(leaf):
+        try:
+            data = requests.get(url, timeout=30, headers={"User-Agent": USER_AGENT}).content
+            try:
+                cert = x509.load_der_x509_certificate(data)
+            except ValueError:
+                cert = x509.load_pem_x509_certificate(data)
+        except (requests.RequestException, ValueError) as e:
+            print(f"  could not download intermediate {url}: {e}")
+            continue
+        if not _signed_by_trusted_root(cert):
+            print(f"  ignoring {url}: not signed by a trusted root")
+            continue
+        _FETCHED_INTERMEDIATES.append(cert.public_bytes(serialization.Encoding.PEM).decode())
+        print(f"  note: fetched intermediate {cert.subject.rfc4514_string()} from {url}; "
+              "consider adding it to src/rrc_leaderboard/certs/")
+        added += 1
+    if added:
+        _CA_BUNDLE = None
+    return added
 
 
 def make_session() -> requests.Session:
@@ -99,16 +176,23 @@ def method_url(ch: int, task: int, method_id: int) -> str:
 
 
 def fetch(session: requests.Session, url: str, retries: int = 3) -> str:
-    for attempt in range(retries):
+    failures, healed = 0, False
+    while True:
         try:
             r = session.get(url, timeout=60)
             r.raise_for_status()
             return r.text
-        except requests.RequestException:
-            if attempt == retries - 1:
+        except requests.exceptions.SSLError:
+            # Most likely RRC's certificate now uses an intermediate we don't have yet.
+            if healed or not fetch_intermediates(urlparse(url).hostname):
                 raise
-            time.sleep(5 * (attempt + 1))
-    raise AssertionError("unreachable")
+            healed = True
+            session.verify = ca_bundle()
+        except requests.RequestException:
+            failures += 1
+            if failures >= retries:
+                raise
+            time.sleep(5 * failures)
 
 
 # --------------------------------------------------------------------------- parsing

@@ -133,3 +133,54 @@ def test_method_details_opt_in(tmp_path):
 def test_rejects_email_in_config(tmp_path):
     with pytest.raises(SystemExit):
         mirror.load_config(_config(tmp_path, "    method_details: [email]\n"))
+
+
+# --------------------------------------------------------------------------- TLS workaround
+
+def test_issuer_url_and_root_check():
+    from cryptography import x509
+    from importlib import resources
+    leaf = x509.load_pem_x509_certificate((FIX / "rrc_leaf.pem").read_bytes())
+    assert scrape._issuer_urls(leaf) == ["http://crt.harica.gr/HARICA-GEANT-TLS-R1.cer"]
+    bundled = resources.files("rrc_leaderboard").joinpath("certs/geant-tls-rsa-1.pem").read_bytes()
+    assert scrape._signed_by_trusted_root(x509.load_pem_x509_certificate(bundled))
+    assert not scrape._signed_by_trusted_root(leaf)  # issued by an intermediate, not a root
+
+
+class _Resp:
+    text = "ok"
+
+    def raise_for_status(self):
+        pass
+
+
+class _Session:
+    def __init__(self, errors):
+        self.errors, self.verify, self.calls = list(errors), None, 0
+
+    def get(self, url, timeout):
+        self.calls += 1
+        if self.errors:
+            raise self.errors.pop(0)
+        return _Resp()
+
+
+def test_fetch_repairs_missing_intermediate_once(monkeypatch):
+    import requests
+    calls = []
+    monkeypatch.setattr(scrape, "fetch_intermediates", lambda host: calls.append(host) or 1)
+    s = _Session([requests.exceptions.SSLError("unable to get local issuer certificate")])
+    assert scrape.fetch(s, "https://rrc.cvc.uab.es/?ch=1", retries=1) == "ok"
+    assert calls == ["rrc.cvc.uab.es"] and s.calls == 2
+
+    s = _Session([requests.exceptions.SSLError("x"), requests.exceptions.SSLError("y")])
+    with pytest.raises(requests.exceptions.SSLError):
+        scrape.fetch(s, "https://rrc.cvc.uab.es/", retries=3)
+    assert s.calls == 2  # repaired once, then gives up instead of looping
+
+
+def test_fetch_does_not_hide_tls_errors_without_new_intermediate(monkeypatch):
+    import requests
+    monkeypatch.setattr(scrape, "fetch_intermediates", lambda host: 0)
+    with pytest.raises(requests.exceptions.SSLError):
+        scrape.fetch(_Session([requests.exceptions.SSLError("x")]), "https://rrc.cvc.uab.es/")

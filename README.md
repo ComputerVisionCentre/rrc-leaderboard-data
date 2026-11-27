@@ -119,12 +119,22 @@ competitions:
 
 ### Note on the RRC TLS certificate
 
-`rrc.cvc.uab.es` sends only its own certificate, not the intermediate `GEANT TLS RSA 1`
-certificate. Browsers fill the gap themselves, but `curl`, Python and similar tools fail with
-*"unable to verify the first certificate"*. This repo includes that public intermediate certificate
-([`certs/geant-tls-rsa-1.pem`](src/rrc_leaderboard/certs/geant-tls-rsa-1.pem)), so connections are
-still fully verified. **The proper fix is for the server to send the full certificate chain**; after
-that, the bundled file is harmless and can be removed.
+`rrc.cvc.uab.es` sends only its own certificate, without the intermediate certificate
+(currently `GEANT TLS RSA 1`) that links it to a trusted root. Browsers fill the gap
+themselves, but `curl`, Python and similar tools fail with *"unable to verify the first certificate"*.
+This is not expected to change on the server, so the mirror handles it itself, with
+certificate verification always on:
+
+1. It ships the current intermediate ([`certs/geant-tls-rsa-1.pem`](src/rrc_leaderboard/certs/geant-tls-rsa-1.pem)).
+2. If RRC's certificate is reissued under a different intermediate and verification fails, the
+   mirror reads the intermediate's download URL from RRC's certificate ("CA Issuers"),
+   downloads it, and retries once. A downloaded certificate is only used if a root in
+   `certifi` signed it, so tampering with the plain-HTTP download can't make anything untrusted
+   pass. The workflow log then says *"fetched intermediate …; consider adding it to
+   src/rrc_leaderboard/certs/"*: adding it saves one extra request per run, but isn't required.
+
+To fetch RRC yourself with `curl`, add the intermediate to the trusted list:
+`cat /etc/ssl/certs/ca-certificates.crt src/rrc_leaderboard/certs/geant-tls-rsa-1.pem > rrc-ca.pem && curl --cacert rrc-ca.pem https://rrc.cvc.uab.es/`.
 
 ## Development
 
@@ -134,3 +144,13 @@ pytest
 rrc-mirror --out out --site site   # full local run; then: python -m http.server -d out
 ```
 The tests use a made-up page fixture. Don't commit pages saved while logged in: they can contain private methods.
+
+## License
+
+The contents of this repository are licensed under
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE).
+
+The mirrored leaderboard results come from the public pages of the
+[Robust Reading Competition](https://rrc.cvc.uab.es/). When you use them, credit the RRC and the
+competition, and follow the competition's own terms.
+

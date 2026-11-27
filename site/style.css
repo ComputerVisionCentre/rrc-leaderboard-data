@@ -65,6 +65,7 @@ tr.competition td { background: var(--competition-bg); }
 .legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); margin: 8px 0; }
 .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--border); vertical-align: -2px; margin-right: 4px; }
 .chart { width: 100%; min-height: 120px; border: 1px solid var(--border); border-radius: 8px; padding: 12px; overflow-x: auto; }
+#table.capped .table-wrap { max-height: 70vh; overflow-y: auto; }
 .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 16px; }
 pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; overflow-x: auto; font-size: 0.8rem; }
 .error { color: #c0392b; }

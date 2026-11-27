@@ -21,7 +21,13 @@ export async function getJSON(path) {
 export async function loadTask(competition, task) {
   const base = `${competition}/task${task}/`;
   const [meta, latest] = await Promise.all([getJSON(base + "meta.json"), getJSON(base + "latest.json")]);
-  latest.methods.forEach((m) => (m.type = methodType(m)));
+  // Method names are not unique on RRC; charts group by `label`, so make it unique.
+  const counts = {};
+  latest.methods.forEach((m) => (counts[m.method] = (counts[m.method] || 0) + 1));
+  latest.methods.forEach((m) => {
+    m.type = methodType(m);
+    m.label = counts[m.method] > 1 ? `${m.method} (#${m.method_id ?? m.position})` : m.method;
+  });
   return { meta, methods: latest.methods, snapshot: latest.snapshot, base: DATA + base };
 }
 

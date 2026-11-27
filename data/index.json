@@ -1,0 +1,13 @@
+[
+  {
+    "competition": "docvqa-2026",
+    "title": "DocVQA 2026",
+    "ch": 34,
+    "task": 1,
+    "task_title": "Task 1 - DocVQA2026",
+    "primary_metric": "score",
+    "n_methods": 48,
+    "last_changed": "2026-11-27T15:46:48Z",
+    "path": "data/docvqa-2026/task1/"
+  }
+]

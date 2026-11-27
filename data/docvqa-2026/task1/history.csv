@@ -1,0 +1,433 @@
+snapshot,competition,task,method_id,method,event,metric,value
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score,0.6875
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_business_report,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_comics,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_engineering_drawing,0.85
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_infographics,0.8
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_maps,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_science_paper,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_science_poster,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136842,Zoloz-RealDoc,added,score_slide,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score,0.6813
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_business_report,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_comics,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_engineering_drawing,0.8
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_infographics,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_maps,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_science_paper,0.85
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_science_poster,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135663,debug_gemini_new,added,score_slide,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score,0.6625
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_business_report,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_comics,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_engineering_drawing,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_infographics,0.8
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_maps,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_science_paper,0.8
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_science_poster,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135462,Uni-Parser Tools w/ mix-of-though + Ensemble (zero shot),added,score_slide,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score,0.6625
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_business_report,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_comics,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_engineering_drawing,0.85
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_infographics,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_maps,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_science_paper,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_science_poster,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,136765,GPT+multi-agent,added,score_slide,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score,0.6438
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_business_report,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_comics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_engineering_drawing,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_infographics,0.8
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_maps,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_science_paper,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_science_poster,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135499,MLLM (large),added,score_slide,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score,0.6125
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_business_report,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_engineering_drawing,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_infographics,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_maps,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_science_paper,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_science_poster,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135452,Uni-Parser Tools w/ mix-of-though (zero shot),added,score_slide,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_business_report,0.75
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_engineering_drawing,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_infographics,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_maps,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_science_paper,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_science_poster,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135435,Luna + IDA + Multi-Agent Reasoning Ensemble -> Update with Fine Tuning,added,score_slide,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score,0.5563
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_business_report,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_engineering_drawing,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_infographics,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_maps,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_science_paper,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135310,Luna + IDA + Multi-Agent Reasoning Ensemble,added,score_slide,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score,0.4625
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_business_report,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_comics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_engineering_drawing,0.7
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_infographics,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_maps,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_science_paper,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134600,Uni-Parser Tools + Gemini-3.1-Pro (Zero-Shot),added,score_slide,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score,0.4438
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_business_report,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_comics,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_engineering_drawing,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_maps,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_science_paper,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_science_poster,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135643,ARGUS_Gemini_3.1_Pro_update,added,score_slide,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score,0.4375
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_business_report,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_engineering_drawing,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_science_paper,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135534,ARGUS_Gemini_3.1_Pro,added,score_slide,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score,0.4375
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_business_report,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_comics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_engineering_drawing,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_infographics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_maps,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_science_paper,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_science_poster,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,136171,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_slide,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score,0.375
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_business_report,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_comics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_engineering_drawing,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_infographics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_science_paper,0.65
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_science_poster,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134545,[Baseline] Gemini-3.1-Pro-preview (Zero-Shot),added,score_slide,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score,0.375
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_business_report,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_comics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_engineering_drawing,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_science_paper,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_science_poster,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135546,MLLM (small),added,score_slide,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score,0.3563
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_business_report,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_engineering_drawing,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_science_paper,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_science_poster,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134544,[Baseline] Gemini-3-Flash-preview (Zero-Shot),added,score_slide,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score,0.3563
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_business_report,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_engineering_drawing,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_science_paper,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135531,ARGUS_Qwen3.5_27B,added,score_slide,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score,0.3563
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_business_report,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_comics,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_engineering_drawing,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_maps,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_science_paper,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_science_poster,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135554,Perceive-Reason-Code: An Agentic Approach to Document Visual QA,added,score_slide,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score,0.3188
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_comics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_engineering_drawing,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_science_paper,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_science_poster,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135287,Uni-Parser Tools + Qwen3.5-27B (Zero-Shot),added,score_slide,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score,0.3188
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_comics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_engineering_drawing,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_maps,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_science_paper,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_science_poster,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135415,auto_contest,added,score_slide,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score,0.2875
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_business_report,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_comics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_engineering_drawing,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_science_paper,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_science_poster,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135144,rag-27b,added,score_slide,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score,0.2875
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_business_report,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_engineering_drawing,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_infographics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_science_paper,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_science_poster,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135160,qwen-3.5-plus,added,score_slide,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score,0.275
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_comics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_engineering_drawing,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_infographics,0.55
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_maps,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_science_paper,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134880,rocky mode,added,score_slide,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score,0.275
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_business_report,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_engineering_drawing,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_science_paper,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_science_poster,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135176,rag_gemini-3.1-flash-preview,added,score_slide,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score,0.2688
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_business_report,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_comics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_engineering_drawing,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_infographics,0.45
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_science_paper,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_science_poster,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134548,[Baseline] GPT-5.2 (Zero-shot),added,score_slide,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score,0.2563
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_engineering_drawing,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_infographics,0.5
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_maps,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_science_paper,0.6
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_science_poster,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134560,[Baseline] GPT-5.4 (Zero-shot),added,score_slide,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score,0.2438
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_comics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_engineering_drawing,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_maps,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_science_paper,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135169,rag_gemini-2.5-pro,added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score,0.2375
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_business_report,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_comics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_engineering_drawing,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_infographics,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_science_paper,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_science_poster,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135421,qwen35vl_27b_sft,added,score_slide,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_comics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_engineering_drawing,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_infographics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_science_paper,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_science_poster,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134864,auto_contest_first_try,added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_engineering_drawing,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_science_paper,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_science_poster,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135577,HALLEY (Hybrid Adaptive Language Logic Engine),added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score,0.1938
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_business_report,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_engineering_drawing,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_science_paper,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_science_poster,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135162,gemini-2.5-flash,added,score_slide,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score,0.1875
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_business_report,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_engineering_drawing,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_science_paper,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_science_poster,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134641,Uni-Parser Tools + Qwen3.5-4B (Zero-Shot),added,score_slide,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score,0.1813
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_engineering_drawing,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_science_paper,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135153,qwen-vl-3-235b,added,score_slide,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score,0.175
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_comics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_engineering_drawing,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_infographics,0.4
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_science_paper,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134547,[Baseline] GPT-5-mini (Zero-shot),added,score_slide,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score,0.1563
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_business_report,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_comics,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_engineering_drawing,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_infographics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_science_paper,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_science_poster,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135304,qwen3-vl-32b,added,score_slide,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score,0.1438
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_engineering_drawing,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_infographics,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_science_paper,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134564,[Baseline] Qwen3-VL-32B-Thinking (Zero-Shot),added,score_slide,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score,0.1438
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_science_paper,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135386,ARGUS_Qwen3-VL-8B-Thinking,added,score_slide,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score,0.1125
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_infographics,0.25
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_science_paper,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_science_poster,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134845,Qwen3-VL-8B-Thinking[Test],added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score,0.1063
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_business_report,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_infographics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_maps,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_science_paper,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135303,qwen3vl-8b-sft,added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score,0.0938
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_comics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_infographics,0.35
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_science_paper,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134562,[Baseline] Qwen3-VL-8B-Thinking (Zero-Shot),added,score_slide,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score,0.0938
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_business_report,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_infographics,0.3
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_science_paper,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134804,Pushing 8B model,added,score_slide,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score,0.0688
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_comics,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_infographics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_science_paper,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135351,Multimodal DocVQA with Qwen2.5-VL,added,score_slide,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score,0.0625
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_business_report,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_comics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_infographics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_maps,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_science_paper,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135418,Multi-Agent Retrieval-Augmented Generation for Document VQA[Test],added,score_slide,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_comics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_infographics,0.2
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_science_paper,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_science_poster,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134618,Zero-shot approach with tiny models,added,score_slide,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_business_report,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_comics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_engineering_drawing,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_infographics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_science_paper,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_science_poster,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,139003,1,added,score_slide,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score,0.0313
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_business_report,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_infographics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_science_paper,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135189,Graph-Based,added,score_slide,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score,0.0188
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_comics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_infographics,0.15
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_science_paper,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_science_poster,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134565,[Baseline] Qwen3-VL-2B-Thinking (Zero-Shot),added,score_slide,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score,0.0125
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_comics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_engineering_drawing,0.1
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_infographics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_science_paper,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_science_poster,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,134654,Florence-2 with Quadrant Tiling and QLoRA for Multi-Domain Document Reasoning,added,score_slide,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score,0.0125
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_business_report,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_comics,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_engineering_drawing,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_infographics,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_maps,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_science_paper,0.0
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_science_poster,0.05
+2026-11-27T15:46:48Z,docvqa-2026,1,135420,Vision Encoder OCR Model,added,score_slide,0.0

@@ -1,0 +1,59 @@
+{
+  "competition": "docvqa-2026",
+  "title": "DocVQA 2026",
+  "challenge_title": "DocVQA 2026",
+  "ch": 34,
+  "task": 1,
+  "task_title": "Task 1 - DocVQA2026",
+  "source_url": "https://rrc.cvc.uab.es/?ch=34&com=evaluation&task=1",
+  "metrics": [
+    {
+      "key": "score",
+      "label": "Score"
+    },
+    {
+      "key": "score_business_report",
+      "label": "Business Report"
+    },
+    {
+      "key": "score_comics",
+      "label": "Comics"
+    },
+    {
+      "key": "score_engineering_drawing",
+      "label": "Engineering Drawing"
+    },
+    {
+      "key": "score_infographics",
+      "label": "Infographics"
+    },
+    {
+      "key": "score_maps",
+      "label": "Maps"
+    },
+    {
+      "key": "score_science_paper",
+      "label": "Science Paper"
+    },
+    {
+      "key": "score_science_poster",
+      "label": "Science Poster"
+    },
+    {
+      "key": "score_slide",
+      "label": "Slide"
+    }
+  ],
+  "attributes": [
+    {
+      "key": "parameters",
+      "label": "Total Parameters"
+    }
+  ],
+  "detail_fields": [],
+  "primary_metric": "score",
+  "higher_is_better": true,
+  "n_methods": 48,
+  "n_baselines": 8,
+  "last_changed": "2026-11-27T15:46:48Z"
+}

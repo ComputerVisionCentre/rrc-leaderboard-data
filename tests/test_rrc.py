@@ -2,10 +2,9 @@ import csv
 import json
 from pathlib import Path
 
-import pandas as pd
 import pytest
 
-from rrc_leaderboard import mirror, scrape, state_at
+from rrc_leaderboard import mirror, scrape
 
 FIX = Path(__file__).parent / "fixtures"
 PAGE = (FIX / "leaderboard.html").read_text()
@@ -96,14 +95,6 @@ def test_mirror_end_to_end(tmp_path, monkeypatch):
     assert ("updated", "Beta", "score") in kinds
     assert ("removed", "[Baseline] Gamma (zero-shot)", "") in kinds
     assert sum(k[0] == "added" for k in kinds) == 3  # the renamed method counts as new
-
-    # Rebuild the leaderboard as it was before the change.
-    hist = pd.read_csv(tdir / "history.csv")
-    hist["snapshot"] = pd.to_datetime(hist["snapshot"], utc=True)
-    first = hist["snapshot"].min()
-    old = state_at(hist, first)
-    assert set(old["method"]) == {"Alpha & Co", "Beta", "[Baseline] Gamma (zero-shot)"}
-    assert old[(old.method == "Beta") & (old.metric == "score")]["value"].item() == 0.7
 
 
 def test_empty_table_keeps_previous_data(tmp_path):

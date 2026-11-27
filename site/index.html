@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>RRC Leaderboards</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0/build/vega.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0/build/vega-lite.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0/build/vega-embed.min.js"></script>
 </head>
 <body>
 <main>
@@ -23,10 +20,6 @@
         <option value="baselines">Baselines only</option>
       </select>
     </label>
-    <label>Metric for charts <select id="sel-metric"></select></label>
-    <label>Top N in charts
-      <select id="sel-top"><option>10</option><option selected>20</option><option>50</option><option value="0">All</option></select>
-    </label>
   </div>
 
   <div class="legend">
@@ -36,103 +29,24 @@
     <span id="updated"></span>
   </div>
 
-  <div id="table" class="capped"><p class="muted">Loading…</p></div>
-
-  <h2>Ranking</h2>
-  <div class="chart" id="chart-rank"></div>
-
-  <div class="grid2">
-    <div><h2>Per category</h2><div class="chart" id="chart-heat"></div></div>
-    <div><h2>Progress over time</h2><div class="chart" id="chart-time"></div></div>
-  </div>
+  <div id="table"><p class="muted">Loading…</p></div>
 
   <h2>Use the data</h2>
-  <p>Files for this leaderboard (updated hourly): <span id="downloads"></span></p>
+  <p>Files for this leaderboard (checked hourly): <span id="downloads"></span></p>
   <p>Embed the table on another site:</p>
   <pre id="embed-snippet"></pre>
-  <p>Load it in Python (<code>pip install "rrc-leaderboard[client] @ git+https://github.com/ComputerVisionCentre/rrc-leaderboard-data"</code>) or with plain pandas:</p>
+  <p>Load it in Python:</p>
   <pre id="py-snippet"></pre>
   <p class="muted">Only what is publicly visible on RRC is mirrored. See the
-    <a href="https://github.com/ComputerVisionCentre/rrc-leaderboard-data">repository</a> for the data format and examples.</p>
+    <a href="https://github.com/ComputerVisionCentre/rrc-leaderboard-data">repository</a> for the data format.</p>
 </main>
 
 <script type="module">
-  import { getJSON, loadTask, filterMethods, sortMethods, renderTable, getParam, isDark, TYPE_ORDER } from "./app.js";
+  import { getJSON, loadTask, filterMethods, sortMethods, renderTable, getParam, esc } from "./app.js";
 
   const $ = (id) => document.getElementById(id);
-  const state = { only: getParam("only", "all"), metric: null, top: 20, sortKey: null };
+  const state = { only: getParam("only", "all"), sortKey: null };
   let current = null;
-
-  const typeColor = { domain: TYPE_ORDER, range: ["#e0a100", "#2f6fd6", "#8a94a3"] };
-  const embedOpts = () => ({ actions: { export: true, source: false, compiled: false, editor: true },
-                             theme: isDark() ? "dark" : undefined, renderer: "svg" });
-
-  function chartRows() {
-    const m = state.metric;
-    let rows = sortMethods(filterMethods(current.methods, state.only), m, current.meta.higher_is_better)
-      .filter((x) => typeof x[m] === "number");
-    return state.top > 0 ? rows.slice(0, state.top) : rows;
-  }
-
-  function drawCharts() {
-    const { meta } = current;
-    const m = state.metric, mLabel = meta.metrics.find((x) => x.key === m)?.label ?? m;
-    const rows = chartRows();
-    const order = meta.higher_is_better ? "descending" : "ascending";
-
-    vegaEmbed("#chart-rank", {
-      $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-      width: "container", height: { step: 18 },
-      data: { values: rows },
-      mark: { type: "bar", cornerRadiusEnd: 2 },
-      encoding: {
-        y: { field: "label", type: "nominal", sort: { field: m, order }, title: null, axis: { labelLimit: 320 } },
-        x: { field: m, type: "quantitative", title: mLabel },
-        color: { field: "type", type: "nominal", scale: typeColor, title: null, legend: { orient: "bottom" } },
-        tooltip: [{ field: "method" }, { field: "date" }, { field: m, title: mLabel, format: ".4f" }, { field: "type" }],
-      },
-    }, embedOpts());
-
-    const cats = meta.metrics.filter((x) => x.key !== meta.primary_metric);
-    const heatCats = cats.length ? cats : meta.metrics;
-    const long = rows.flatMap((r) => heatCats.map((c) => ({ method: r.label, category: c.label, value: r[c.key] })));
-    vegaEmbed("#chart-heat", {
-      $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-      width: "container", height: { step: 18 },
-      data: { values: long },
-      encoding: {
-        y: { field: "method", type: "nominal", sort: rows.map((r) => r.label), title: null, axis: { labelLimit: 220 } },
-        x: { field: "category", type: "nominal", sort: heatCats.map((c) => c.label), title: null, axis: { labelAngle: -40 } },
-      },
-      layer: [
-        { mark: "rect", encoding: { color: { field: "value", type: "quantitative", scale: { scheme: "blues" }, title: null },
-                                    tooltip: [{ field: "method" }, { field: "category" }, { field: "value", format: ".4f" }] } },
-        { mark: { type: "text", fontSize: 9 }, encoding: { text: { field: "value", format: ".2f" },
-            color: { condition: { test: "datum.value > 0.6", value: "white" }, value: "black" } } },
-      ],
-    }, embedOpts());
-
-    const timeRows = filterMethods(current.methods, state.only).filter((x) => x.date && typeof x[m] === "number");
-    vegaEmbed("#chart-time", {
-      $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-      width: "container", height: 320,
-      data: { values: timeRows },
-      layer: [
-        { mark: { type: "point", filled: true, size: 60, opacity: 0.85 },
-          encoding: {
-            x: { field: "date", type: "temporal", title: "Submission date" },
-            y: { field: m, type: "quantitative", title: mLabel },
-            color: { field: "type", type: "nominal", scale: typeColor, title: null, legend: { orient: "bottom" } },
-            tooltip: [{ field: "method" }, { field: "date" }, { field: m, title: mLabel, format: ".4f" }],
-          } },
-        { transform: [
-            { sort: [{ field: "date" }], window: [{ op: meta.higher_is_better ? "max" : "min", field: m, as: "best" }], frame: [null, 0] },
-          ],
-          mark: { type: "line", interpolate: "step-after", strokeDash: [4, 3], color: "#888" },
-          encoding: { x: { field: "date", type: "temporal" }, y: { field: "best", type: "quantitative" } } },
-      ],
-    }, embedOpts());
-  }
 
   function drawTable() {
     const { meta } = current;
@@ -145,44 +59,39 @@
     $("table").innerHTML = '<p class="muted">Loading…</p>';
     current = await loadTask(c, t);
     const { meta, base } = current;
-    state.metric = meta.primary_metric;
     state.sortKey = meta.primary_metric;
     $("title").textContent = meta.title || meta.competition;
-    $("subtitle").innerHTML = `${meta.task_title ?? "Task " + meta.task} · public results mirrored from the
-      <a href="${meta.source_url}" target="_blank" rel="noopener">Robust Reading Competition</a>`;
+    $("subtitle").innerHTML = `${esc(meta.task_title ?? "Task " + meta.task)} · public results mirrored from the
+      <a href="${esc(meta.source_url)}" target="_blank" rel="noopener">Robust Reading Competition</a>`;
     $("updated").textContent = `Last change: ${meta.last_changed.replace("T", " ").replace("Z", " UTC")}`;
-    $("sel-metric").innerHTML = meta.metrics.map((x) => `<option value="${x.key}">${x.label}</option>`).join("");
-    $("sel-metric").value = state.metric;
-    $("downloads").innerHTML = ["latest.csv", "wide.csv", "history.csv", "latest.json", "meta.json"]
+    $("downloads").innerHTML = ["wide.csv", "latest.csv", "history.csv", "latest.json", "meta.json"]
       .map((f) => `<a href="${base}${f}">${f}</a>`).join(" · ");
     const site = new URL(".", document.baseURI).href;
     $("embed-snippet").textContent =
       `<iframe src="${site}embed.html?c=${c}&t=${t}&top=10" width="100%" height="480" style="border:0"></iframe>`;
     $("py-snippet").textContent =
-      `import rrc_leaderboard as rl\ndf = rl.load("${c}", task=${t})              # one row per method x metric\n` +
-      `wide = rl.load("${c}", task=${t}, kind="wide")\n\n` +
-      `# or without the helper:\nimport pandas as pd\nwide = pd.read_csv("${base}wide.csv")`;
+      `import pandas as pd\n` +
+      `wide = pd.read_csv("${base}wide.csv")        # one row per method\n` +
+      `long = pd.read_csv("${base}latest.csv")      # one row per method x metric\n` +
+      `history = pd.read_csv("${base}history.csv")  # every change seen by the mirror`;
     const u = new URL(location.href); u.searchParams.set("c", c); u.searchParams.set("t", t); history.replaceState(null, "", u);
     drawTable();
-    drawCharts();
   }
 
   try {
     const index = await getJSON("index.json");
     if (!index.length) throw new Error("no leaderboards mirrored yet");
     $("sel-task").innerHTML = index
-      .map((e) => `<option value="${e.competition}|${e.task}">${e.title ?? e.competition} – ${e.task_title ?? "Task " + e.task}</option>`)
+      .map((e) => `<option value="${esc(e.competition)}|${e.task}">${esc(e.title ?? e.competition)} – ${esc(e.task_title ?? "Task " + e.task)}</option>`)
       .join("");
     const want = `${getParam("c", index[0].competition)}|${getParam("t", index[0].task)}`;
     if ([...$("sel-task").options].some((o) => o.value === want)) $("sel-task").value = want;
     $("sel-only").value = state.only;
     $("sel-task").onchange = (e) => selectTask(e.target.value);
-    $("sel-only").onchange = (e) => { state.only = e.target.value; drawTable(); drawCharts(); };
-    $("sel-metric").onchange = (e) => { state.metric = e.target.value; drawCharts(); };
-    $("sel-top").onchange = (e) => { state.top = parseInt(e.target.value, 10); drawCharts(); };
+    $("sel-only").onchange = (e) => { state.only = e.target.value; drawTable(); };
     await selectTask($("sel-task").value);
   } catch (e) {
-    $("table").innerHTML = `<p class="error">Could not load data: ${String(e.message).replace(/</g, "&lt;")}</p>`;
+    $("table").innerHTML = `<p class="error">Could not load data: ${esc(e.message)}</p>`;
   }
 </script>
 </body>

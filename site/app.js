@@ -1,16 +1,8 @@
-// Shared code for index.html (explorer) and embed.html (embeddable table).
+// Shared code for index.html (leaderboard) and embed.html (embeddable table).
 // Data comes from ./data/<competition>/task<N>/{meta.json,latest.json}.
 
 const DATA = new URL("data/", document.baseURI).href;
 const params = new URLSearchParams(location.search);
-
-export const TYPE_ORDER = ["Baseline", "Competition entry", "Other public"];
-
-export function methodType(m) {
-  if (m.is_baseline) return "Baseline";
-  if (m.is_competition) return "Competition entry";
-  return "Other public";
-}
 
 export async function getJSON(path) {
   const r = await fetch(DATA + path, { cache: "no-cache" });
@@ -21,14 +13,7 @@ export async function getJSON(path) {
 export async function loadTask(competition, task) {
   const base = `${competition}/task${task}/`;
   const [meta, latest] = await Promise.all([getJSON(base + "meta.json"), getJSON(base + "latest.json")]);
-  // Method names are not unique on RRC; charts group by `label`, so make it unique.
-  const counts = {};
-  latest.methods.forEach((m) => (counts[m.method] = (counts[m.method] || 0) + 1));
-  latest.methods.forEach((m) => {
-    m.type = methodType(m);
-    m.label = counts[m.method] > 1 ? `${m.method} (#${m.method_id ?? m.position})` : m.method;
-  });
-  return { meta, methods: latest.methods, snapshot: latest.snapshot, base: DATA + base };
+  return { meta, methods: latest.methods, base: DATA + base };
 }
 
 export function filterMethods(methods, only) {
@@ -50,7 +35,8 @@ export function sortMethods(methods, key, higherIsBetter = true) {
 }
 
 const fmt = (v) => (typeof v === "number" ? v.toFixed(4) : v ?? "–");
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+export const esc = (s) =>
+  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
 /**
  * Render a leaderboard table into `el`.
@@ -102,8 +88,4 @@ export function renderTable(el, meta, methods, opts = {}) {
 
 export function getParam(name, fallback = null) {
   return params.get(name) ?? fallback;
-}
-
-export function isDark() {
-  return matchMedia("(prefers-color-scheme: dark)").matches;
 }

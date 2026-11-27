@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RRC Leaderboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!--
+  Embeddable leaderboard table. Query parameters:
+    c        competition id (required)          t       task number (default 1)
+    only     all | baselines | competition      top     show only the first N rows
+    metrics  comma-separated metric keys (default: all)
+    attrs    0 to hide attribute columns (e.g. parameter count)
+  Example:
+    <iframe src="https://computervisioncentre.github.io/rrc-leaderboard-data/embed.html?c=docvqa-2026&t=1&top=10"
+            width="100%" height="480" style="border:0"></iframe>
+-->
+<body class="embed">
+<main>
+  <div id="table"><p class="muted" style="padding:8px">Loading…</p></div>
+  <footer class="muted" id="footer"></footer>
+</main>
+<script type="module">
+  import { loadTask, filterMethods, sortMethods, renderTable, getParam } from "./app.js";
+
+  const el = document.getElementById("table");
+  const c = getParam("c"), t = getParam("t", "1");
+  try {
+    if (!c) throw new Error("missing ?c=<competition id>");
+    const { meta, methods } = await loadTask(c, t);
+    const metricsParam = getParam("metrics");
+    const metrics = metricsParam ? metricsParam.split(",") : null;
+    let sortKey = meta.primary_metric;
+    const draw = () => {
+      let rows = sortMethods(filterMethods(methods, getParam("only", "all")), sortKey, meta.higher_is_better);
+      const top = parseInt(getParam("top", "0"), 10);
+      if (top > 0) rows = rows.slice(0, top);
+      renderTable(el, meta, rows, {
+        metrics, attributes: getParam("attrs") !== "0", sortKey,
+        onSort: (k) => { sortKey = k; draw(); },
+      });
+    };
+    draw();
+    document.getElementById("footer").innerHTML =
+      `Source: <a href="${meta.source_url}" target="_blank" rel="noopener">Robust Reading Competition</a> · updated ${meta.last_changed.slice(0, 10)}`;
+  } catch (e) {
+    el.innerHTML = `<p class="error" style="padding:8px">Could not load leaderboard: ${String(e.message).replace(/</g, "&lt;")}</p>`;
+  }
+</script>
+</body>
+</html>

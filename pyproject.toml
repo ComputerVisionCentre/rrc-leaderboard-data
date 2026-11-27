@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rrc-leaderboard"
+version = "0.1.0"
+description = "Mirror public Robust Reading Competition (rrc.cvc.uab.es) leaderboards into plot-friendly CSV/JSON"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+client = ["pandas>=1.5"]
+mirror = ["requests>=2.28", "beautifulsoup4>=4.11", "PyYAML>=6", "certifi"]
+plots = ["pandas>=1.5", "matplotlib>=3.6"]
+dev = ["rrc-leaderboard[mirror,client]", "pytest>=7"]
+
+[project.scripts]
+rrc-mirror = "rrc_leaderboard.mirror:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+rrc_leaderboard = ["certs/*.pem"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

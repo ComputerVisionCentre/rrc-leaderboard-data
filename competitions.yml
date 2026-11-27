@@ -1,0 +1,18 @@
+# Leaderboards to mirror. Adding an entry here is all a new competition needs.
+#
+#   id:               short name used in URLs: data/<id>/task<N>/...
+#   ch:               RRC challenge number (the ?ch= in RRC URLs)
+#   tasks:            RRC task numbers (the &task= in RRC URLs)
+#   title:            optional display name (default: the RRC challenge name)
+#   primary_metric:   optional metric key used for ranking/plots (default: "score", else the first metric)
+#   higher_is_better: optional, default true
+#   baseline_pattern: optional regex on the method name marking baselines (default: ^\s*\[baseline\], case-insensitive)
+#   method_details:   optional, opt-in list of fields from each method's page:
+#                     authors, affiliation, description. Emails are never collected.
+#
+# Only what an anonymous visitor sees on RRC is mirrored: private methods never appear.
+
+competitions:
+  - id: docvqa-2026
+    ch: 34
+    tasks: [1]

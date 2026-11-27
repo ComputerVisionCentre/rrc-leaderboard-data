@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Example custom chart: score of each public method grouped by model-size bucket. Paste into https://vega.github.io/editor or render with vega-embed on any page.",
+  "data": {
+    "url": "https://computervisioncentre.github.io/rrc-leaderboard-data/data/docvqa-2026/task1/wide.csv",
+    "format": { "type": "csv", "parse": { "score": "number", "date": "date" } }
+  },
+  "transform": [
+    {
+      "calculate": "datum.is_baseline === 'true' ? 'Baseline' : (datum.is_competition === 'true' ? 'Competition entry' : 'Other public')",
+      "as": "type"
+    }
+  ],
+  "width": 500,
+  "height": 220,
+  "mark": { "type": "point", "filled": true, "size": 70 },
+  "encoding": {
+    "y": { "field": "parameters", "type": "nominal", "title": null },
+    "x": { "field": "score", "type": "quantitative", "title": "Score" },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "scale": { "domain": ["Baseline", "Competition entry", "Other public"], "range": ["#e0a100", "#2f6fd6", "#8a94a3"] }
+    },
+    "tooltip": [{ "field": "method" }, { "field": "date", "type": "temporal" }, { "field": "score", "format": ".4f" }]
+  }
+}

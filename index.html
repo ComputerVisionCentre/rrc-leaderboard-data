@@ -36,7 +36,7 @@
     <span id="updated"></span>
   </div>
 
-  <div id="table"><p class="muted">Loading…</p></div>
+  <div id="table" class="capped"><p class="muted">Loading…</p></div>
 
   <h2>Ranking</h2>
   <div class="chart" id="chart-rank"></div>
@@ -86,7 +86,7 @@
       data: { values: rows },
       mark: { type: "bar", cornerRadiusEnd: 2 },
       encoding: {
-        y: { field: "method", type: "nominal", sort: { field: m, order }, title: null, axis: { labelLimit: 320 } },
+        y: { field: "label", type: "nominal", sort: { field: m, order }, title: null, axis: { labelLimit: 320 } },
         x: { field: m, type: "quantitative", title: mLabel },
         color: { field: "type", type: "nominal", scale: typeColor, title: null, legend: { orient: "bottom" } },
         tooltip: [{ field: "method" }, { field: "date" }, { field: m, title: mLabel, format: ".4f" }, { field: "type" }],
@@ -95,13 +95,13 @@
 
     const cats = meta.metrics.filter((x) => x.key !== meta.primary_metric);
     const heatCats = cats.length ? cats : meta.metrics;
-    const long = rows.flatMap((r) => heatCats.map((c) => ({ method: r.method, category: c.label, value: r[c.key] })));
+    const long = rows.flatMap((r) => heatCats.map((c) => ({ method: r.label, category: c.label, value: r[c.key] })));
     vegaEmbed("#chart-heat", {
       $schema: "https://vega.github.io/schema/vega-lite/v5.json",
       width: "container", height: { step: 18 },
       data: { values: long },
       encoding: {
-        y: { field: "method", type: "nominal", sort: rows.map((r) => r.method), title: null, axis: { labelLimit: 220 } },
+        y: { field: "method", type: "nominal", sort: rows.map((r) => r.label), title: null, axis: { labelLimit: 220 } },
         x: { field: "category", type: "nominal", sort: heatCats.map((c) => c.label), title: null, axis: { labelAngle: -40 } },
       },
       layer: [

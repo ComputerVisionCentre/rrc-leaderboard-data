@@ -64,9 +64,15 @@ def state_at(history, when) -> "pd.DataFrame":  # noqa: F821
     """Rebuild the leaderboard (long format) as it was at time `when` from a history frame."""
     import pandas as pd
 
-    when = pd.Timestamp(when, tz="UTC") if pd.Timestamp(when).tzinfo is None else pd.Timestamp(when)
+    when = pd.Timestamp(when)
+    if when.tzinfo is None:
+        when = when.tz_localize("UTC")
     h = history[history["snapshot"] <= when]
-    removed = h[h["event"] == "removed"].groupby("method_id")["snapshot"].max()
+    removed_at = (
+        h[h["event"] == "removed"].groupby("method_id", as_index=False)["snapshot"].max()
+        .rename(columns={"snapshot": "removed_at"})
+    )
     last = h[h["event"] != "removed"].sort_values("snapshot").groupby(["method_id", "metric"]).tail(1)
-    alive = last["method_id"].map(removed).isna() | (last["snapshot"] > last["method_id"].map(removed))
-    return last[alive].drop(columns=["event"]).reset_index(drop=True)
+    last = last.merge(removed_at, on="method_id", how="left")
+    alive = last["removed_at"].isna() | (last["snapshot"] > last["removed_at"])
+    return last[alive].drop(columns=["event", "removed_at"]).reset_index(drop=True)
